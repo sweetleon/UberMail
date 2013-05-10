@@ -7,7 +7,7 @@
 //
 
 #import "LQBNewAccountViewController.h"
-#import <MailCore/MailCore.h>
+#import <MailCore.h>
 
 @interface LQBNewAccountViewController ()
 

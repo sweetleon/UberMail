@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MailCore/MailCore.h>
+#import <MailCore.h>
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 

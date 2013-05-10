@@ -116,10 +116,10 @@
 		381699EB17226199007E5B44 /* LQBNewAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LQBNewAccountViewController.xib; path = UberMail/LQBNewAccountViewController.xib; sourceTree = "<group>"; };
 		381699FF172268AE007E5B44 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		38169A01172268BA007E5B44 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
-		38169A0317226AE2007E5B44 /* MailCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MailCore.xcodeproj; path = ../MailCore/MailCore.xcodeproj; sourceTree = "<group>"; };
-		38169A1817226B27007E5B44 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../MailCore/iOSPorts/ports/security/openssl/build/Release-iphoneos/libssl.a"; sourceTree = "<group>"; };
-		38169A1A17226B37007E5B44 /* libsasl2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsasl2.a; path = "../MailCore/iOSPorts/ports/security/cyrus-sasl/build/Release-iphoneos/libsasl2.a"; sourceTree = "<group>"; };
-		38169A1C17226B41007E5B44 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../MailCore/iOSPorts/ports/security/openssl/build/Release-iphoneos/libcrypto.a"; sourceTree = "<group>"; };
+		38169A0317226AE2007E5B44 /* MailCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MailCore.xcodeproj; path = MailCore/MailCore.xcodeproj; sourceTree = "<group>"; };
+		38169A1817226B27007E5B44 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "MailCore/iOSPorts/ports/security/openssl/build/Release-iphoneos/libssl.a"; sourceTree = "<group>"; };
+		38169A1A17226B37007E5B44 /* libsasl2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsasl2.a; path = "MailCore/iOSPorts/ports/security/cyrus-sasl/build/Release-iphoneos/libsasl2.a"; sourceTree = "<group>"; };
+		38169A1C17226B41007E5B44 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "MailCore/iOSPorts/ports/security/openssl/build/Release-iphoneos/libcrypto.a"; sourceTree = "<group>"; };
 		38169A6317263FBA007E5B44 /* LQBLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQBLoadingView.h; sourceTree = "<group>"; };
 		38169A6417263FBA007E5B44 /* LQBLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQBLoadingView.m; sourceTree = "<group>"; };
 		38169A66172641BF007E5B44 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
@@ -257,8 +257,8 @@
 			isa = PBXGroup;
 			children = (
 				38169A1017226AFE007E5B44 /* MailCore.framework */,
-				38169A1217226AFE007E5B44 /* libmailcore.a */,
 				38169A1417226AFE007E5B44 /* Tests.octest */,
+				38169A1217226AFE007E5B44 /* libmailcore.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -570,6 +570,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "MailCore/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -594,6 +595,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "MailCore/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
@@ -607,9 +609,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UberMail/UberMail-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					"\"$(BUILT_PRODUCTS_DIR)/../../MailCore\"/**",
-					"\"$(BUILT_PRODUCTS_DIR)/../../MailCore/Source\"/**",
 					"$(BUILT_PRODUCTS_DIR)/../../include/**",
+					"MailCore/**",
 				);
 				INFOPLIST_FILE = "UberMail/UberMail-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -623,9 +624,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UberMail/UberMail-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					"\"$(BUILT_PRODUCTS_DIR)/../../MailCore/Source\"/**",
-					"\"$(BUILT_PRODUCTS_DIR)/../../MailCore\"/**",
-					"$(BUILT_PRODUCTS_DIR)/../../include/**",
+					"MailCore/**",
 				);
 				INFOPLIST_FILE = "UberMail/UberMail-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";

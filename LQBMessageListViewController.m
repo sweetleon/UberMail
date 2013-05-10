@@ -9,7 +9,6 @@
 #import "LQBMessageListViewController.h"
 #import "LQBLoadingView.h"
 #import "LQBMessageListCell.h"
-#import <MailCore/MailCore.h>
 #import "LQBMessageDetailViewController.h"
 
 @interface LQBMessageListViewController () {

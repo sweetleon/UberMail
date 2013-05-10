@@ -7,7 +7,7 @@
 //
 
 #import "LQBMessageDetailViewController.h"
-#import <MailCore/MailCore.h>
+#import <MailCore.h>
 #import "LQBPersonViewController.h"
 
 
